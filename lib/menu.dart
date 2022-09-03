@@ -1,3 +1,5 @@
+
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,9 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+
+  int number = 0;
+  
   List<List<dynamic>> foodLists = [
     [
       "https://scontent.fbkk12-5.fna.fbcdn.net/v/t1.15752-9/297260321_3327142617575489_7119123197133263077_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFESTaYc-8HOm67oINP2ccbOH4TFlY_pRg4fhMWVj-lGN99IWll0dzfvHOklKH5WM6z2fkGOy2SGQQznP2pVoc_&_nc_ohc=aePhMUFLHcoAX--R3cE&_nc_ht=scontent.fbkk12-5.fna&oh=03_AVJQ9z0dXyytxzkydhBNOMqRRnYbGOWSh2iDyiuN3pX5bg&oe=63391229",
@@ -35,6 +40,8 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
+    print("$number");
+  
     return ListView.builder(
       itemCount: foodLists.length,
       itemBuilder: (_, index) {
@@ -55,40 +62,57 @@ class _MenuState extends State<Menu> {
                     ),
                     Expanded(
                         child: Container(
-                      padding:
+                        padding:
                           EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                        Text(
-                          "${foodLists[index][1]}",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 5,),
-                        Text("${foodLists[index][2]} ฿",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 14,
-                        ),)
-                      ]),
+                          child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "${foodLists[index][1]}",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "${foodLists[index][2]} ฿",
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 14,
+                              ),
+                            )
+                          ]),
                     ))
                   ],
                 ),
-
+            
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   alignment: Alignment.bottomRight,
-                  child: Chip(
+                  
+                  child: Icon(Icons.add_shopping_cart),
+                  /*Chip(
                     backgroundColor: Colors.grey,
-                    label: Text("Order Now",style: TextStyle(
-                      fontSize: 11,
-                    ),),
-                  ),)
+                    label: Text("Order Now",
+                        style: TextStyle(
+                          fontSize: 11,
+                        )),
+                    labelPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 3),
+                  ),*/
+                  
+                ),
+
+
+                //Icon(Icons.add_shopping_cart,),)
+               
               ],
             ),
           ),
+          
         );
+        
+
       },
     );
   }
