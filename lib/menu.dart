@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -99,9 +100,34 @@ class _MenuState extends State<Menu> {
                   ],
                 ),
 
+                
+                //ตระกร้า
+                Expanded(
+                  
+                child:
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  alignment: Alignment.bottomRight,
+                  
+                  child: 
+                  
+                    FloatingActionButton.extended(
+                  
+                  
+                  onPressed: (){},
+                  
+                  label: Icon(Icons.add_shopping_cart) 
+
+                )
+                  ,
+                )
+                )
+                
+
+                  
 
                 // ตะกร้า
-                Container(
+                /*Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   alignment: Alignment.bottomRight,
                   child: Icon(Icons.add_shopping_cart),
@@ -113,7 +139,7 @@ class _MenuState extends State<Menu> {
                         )),
                     labelPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 3),
                   ),*/
-                ),
+                ),*/
               ],
             ),
           ),
