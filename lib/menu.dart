@@ -55,6 +55,9 @@ class _MenuState extends State<Menu> {
               children: [
                 Row(
                   children: [
+
+
+                    //รูปอาหาร
                     Image.network(
                       foodLists[index][0],
                       fit: BoxFit.cover,
@@ -67,6 +70,11 @@ class _MenuState extends State<Menu> {
                           child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+
+
+
+
+                            // ชื่ออาหาร
                             Text(
                               "${foodLists[index][1]}",
                               style: TextStyle(
@@ -75,6 +83,10 @@ class _MenuState extends State<Menu> {
                             SizedBox(
                               height: 5,
                             ),
+
+
+
+                            // ราคา
                             Text(
                               "${foodLists[index][2]} ฿",
                               style: TextStyle(
@@ -86,11 +98,12 @@ class _MenuState extends State<Menu> {
                     ))
                   ],
                 ),
-            
+
+
+                // ตะกร้า
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   alignment: Alignment.bottomRight,
-                  
                   child: Icon(Icons.add_shopping_cart),
                   /*Chip(
                     backgroundColor: Colors.grey,
@@ -100,19 +113,11 @@ class _MenuState extends State<Menu> {
                         )),
                     labelPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 3),
                   ),*/
-                  
                 ),
-
-
-                //Icon(Icons.add_shopping_cart,),)
-               
               ],
             ),
           ),
-          
         );
-        
-
       },
     );
   }
