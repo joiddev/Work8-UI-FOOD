@@ -28,13 +28,33 @@ class _MenuState extends State<Menu> {
       300
     ],
     [
-      "https://scontent.fbkk9-2.fna.fbcdn.net/v/t1.15752-9/247596454_1211120092742953_1746534572989937785_n.png?stp=dst-png_s2048x2048&_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFvr3lvJLyxAKHc451d-nMXAc1-ePKDRsYBzX548oNGxip-i9zy-MKd5CCWmRmNzZfWKVDaWMKoatrCFPRx2QNV&_nc_ohc=Af2gPXqnhHkAX_Qt9AM&_nc_ht=scontent.fbkk9-2.fna&oh=03_AVLiyjBwGKHWuB9Mnj0EIpnPpV1vGNhWD5Jo33Gx1QqaBA&oe=6338D2D7",
+      "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcf-images.us-east-1.prod.boltdns.net%2Fv1%2Fstatic%2F1033249144001%2F7d24d0c0-dbfa-419b-b3f1-f0c431e5c237%2Ff90cf1ae-f1c4-472c-86c6-a168900bc333%2F1280x720%2Fmatch%2Fimage.jpg",
       "Hot dog",
       300
     ],
     [
-      "https://scontent.fbkk13-1.fna.fbcdn.net/v/t1.15752-9/273707055_1573970866306188_4086316708992751994_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeF1uhsTDQzG_h9sJ8rghEvW2ClWwhd9pyjYKVbCF32nKJeuJBdCZ8eFsrb6pe1EAbwOBSNxDlbBkdNU8PWQkEgz&_nc_ohc=dB_i1KTgAQcAX-Pb9Yv&tn=vqKb6maqWirdVNT9&_nc_ht=scontent.fbkk13-1.fna&oh=03_AVIOJEm0v6OABCDQMU1Iftkyow7Lp6MtC-lbJ69CYAjvgw&oe=6339C6E5",
+      "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1556744250%2Fthe-ultimate-veggie-sandwich-1905.jpg%3Fitok%3DrAOvFAhQ",
       "Sandwich",
+      "300"
+    ],
+    [
+      "https://media-cdn.tripadvisor.com/media/photo-s/11/07/b7/2e/chelsea-burger-applewood.jpg",
+      "Burger",
+      "300"
+    ],
+    [
+      "https://media-cdn.tripadvisor.com/media/photo-s/11/8d/c5/a9/vegetarian-pizza.jpg",
+      "Pizza",
+      "300"
+    ],
+    [
+      "https://s.isanook.com/he/0/rp/rc/w670h402/yatxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2hlLzAvdWQvMy8xOTk5My9jb2ZmZWUuanBn.jpg",
+      "Coffee",
+      "300"
+    ],
+    [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzYD3fzBdT3VpyUzJp0gBJMdH3-pco5VZ7Qg&usqp=CAU",
+      "Ice cream",
       "300"
     ],
   ];
@@ -64,6 +84,7 @@ class _MenuState extends State<Menu> {
                       fit: BoxFit.cover,
                       width: 150,
                     ),
+
                     Expanded(
                         child: Container(
                         padding:
@@ -103,8 +124,8 @@ class _MenuState extends State<Menu> {
 
                 //ตระกร้า
                 Expanded(
-                  
-                child:
+
+                child: 
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                   alignment: Alignment.bottomRight,
@@ -114,15 +135,46 @@ class _MenuState extends State<Menu> {
                     FloatingActionButton.extended(
                       backgroundColor: Color.fromARGB(255, 250, 107, 97),
                   
-                  onPressed: (){},
+                  onPressed: (){
+                    setState(() {
+                      number++;
+                    });
+                  },
+                    
                   
+
+
                   label: Icon(Icons.add_shopping_cart) 
 
                 )
                   ,
-                )
-                )
+                )),
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  alignment:  Alignment.topRight,
+                  child: Column(
+                    children: [
+                      Text("All Orders : "+ number.toString())
+                    ],
+                  ),
+                ),
                 
+                Expanded(
+
+                child: 
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  alignment: Alignment(0.55, 1),
+                  child : FloatingActionButton.extended(
+                    backgroundColor: Colors.grey,
+                    onPressed: (){
+                      setState(() {
+                        number--;
+                      });
+                    },
+                    label: Icon(Icons.exposure_minus_1)
+                  )))
 
                   
 
